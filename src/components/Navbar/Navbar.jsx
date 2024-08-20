@@ -1,5 +1,5 @@
 import React from 'react';
-import { useReadme } from '../context/ReadmeContext';
+import { useReadme } from '../../context/ReadmeContext';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
