@@ -1,9 +1,9 @@
 import React from 'react';
-import { ReadmeProvider } from './context/ReadmeContext';
-import Navbar from './components/Navbar';
-import SectionsColumn from './components/SectionsColumn';
-import EditorColumn from './components/EditorColumn';
-import PreviewColumn from './components/PreviewColumn';
+import { ReadmeProvider } from '../../context/ReadmeContext';
+import Navbar from '../../components/Navbar/Navbar';
+import SectionsColumn from './SectionsColumn';
+import EditorColumn from './EditorColumn';
+import PreviewColumn from './PreviewColumn';
 import styles from './ReadMe.module.css';
 
 const ReadMe = () => {

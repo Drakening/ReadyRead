@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useReadme } from '../context/ReadmeContext';
+import { useReadme } from '../../context/ReadmeContext';
 import ReactMarkdown from 'react-markdown';
 import styles from './PreviewColumn.module.css';
 
