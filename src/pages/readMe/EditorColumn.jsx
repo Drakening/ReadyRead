@@ -1,5 +1,5 @@
 import React from 'react';
-import { useReadme } from '../context/ReadmeContext';
+import { useReadme } from '../../context/ReadmeContext';
 import Editor from '@monaco-editor/react';
 import styles from './EditorColumn.module.css';
 
