@@ -11,16 +11,22 @@ export const ReadmeProvider = ({ children }) => {
 
   const addSection = (section) => {
     setSections([...sections, section]);
+    setMarkdown(prevMarkdown => prevMarkdown + '\n\n' + section.content);
   };
 
   const removeSection = (index) => {
     const newSections = [...sections];
     newSections.splice(index, 1);
     setSections(newSections);
+    updateMarkdownFromSections(newSections);
   };
 
   const updateMarkdown = (newMarkdown) => {
     setMarkdown(newMarkdown);
+  };
+
+  const updateMarkdownFromSections = (newSections) => {
+    setMarkdown(newSections.map(section => section.content).join('\n\n'));
   };
 
   const toggleDarkMode = () => {
