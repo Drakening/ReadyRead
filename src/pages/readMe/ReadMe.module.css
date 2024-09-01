@@ -10,14 +10,13 @@
     overflow: hidden;
   }
   
-  /* Equal width columns */
   .content > * {
     flex: 1;
-    min-width: 0; /* Allows content to shrink below its minimum content size */
-    overflow-y: auto; /* Allows scrolling within columns */
+    min-width: 0; 
+    overflow-y: auto; 
   }
   
-  /* Responsive layout */
+
   @media (max-width: 1200px) {
     .content {
       flex-wrap: wrap;
@@ -38,14 +37,3 @@
     }
   }
   
-  /* Dark mode styles */
-  .darkMode {
-    background-color: #1e1e1e;
-    color: #ffffff;
-  }
-  
-  /* Transition for smooth theme changes */
-  .container,
-  .content > * {
-    transition: background-color 0.3s, color 0.3s;
-  }
