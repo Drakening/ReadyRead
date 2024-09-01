@@ -49,10 +49,3 @@
   .content > * {
     transition: background-color 0.3s, color 0.3s;
   }
-  
-  /* Ensure content doesn't overflow the viewport */
-  html, body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
