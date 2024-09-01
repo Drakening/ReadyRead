@@ -1,28 +1,72 @@
 .column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    border-right: 1px solid #ccc;
-  }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .resetButton,
-  .toggleButton {
-    padding: 5px 10px;
-    background-color: #f0f0f0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .previewContent {
-    flex: 1;
-    overflow-y: auto;
-  }
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-right: 1px solid #ccc;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.darkMode {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border-right-color: #444;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.copyButton {
+  padding: 5px 10px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.darkMode .copyButton {
+  background-color: #333;
+  color: #ffffff;
+}
+
+.copyButton:hover {
+  background-color: #e0e0e0;
+}
+
+.darkMode .copyButton:hover {
+  background-color: #444;
+}
+
+.editorWrapper {
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Ensure CodeMirror takes full height of its container */
+.editorWrapper > div {
+  height: 100%;
+}
+
+/* Additional styles to ensure consistency with CodeMirror dark theme */
+.darkMode .editorWrapper {
+  background-color: #282c34;
+}
+
+.darkMode .cm-editor {
+  background-color: #282c34;
+  color: #abb2bf;
+}
+
+.darkMode .cm-gutters {
+  background-color: #21252b;
+  color: #5c6370;
+}
+
+.darkMode .cm-activeLineGutter {
+  background-color: #2c313a;
+}

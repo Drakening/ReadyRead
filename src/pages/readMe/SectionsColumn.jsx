@@ -3,7 +3,7 @@ import { useReadme } from '../../context/ReadmeContext';
 import styles from './SectionsColumn.module.css';
 
 const SectionsColumn = () => {
-  const { sections, addSection, removeSection } = useReadme();
+  const { sections, addSection, removeSection, darkMode } = useReadme();
 
   const availableSections = [
     { name: 'Project Title', content: '# Project Title\n\nA brief description of what this project does and who it\'s for' },
@@ -20,7 +20,7 @@ const SectionsColumn = () => {
   ];
 
   return (
-    <div className={styles.column}>
+    <div className={`${styles.column} ${darkMode ? styles.darkMode : ''}`}>
       <h2>Sections</h2>
       <p>Click on a section below to edit the contents</p>
       <ul className={styles.sectionList}>

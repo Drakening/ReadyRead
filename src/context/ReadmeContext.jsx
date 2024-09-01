@@ -30,7 +30,7 @@ export const ReadmeProvider = ({ children }) => {
   };
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
+    setDarkMode(prevMode => !prevMode);
   };
 
   return (

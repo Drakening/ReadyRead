@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import styles from './PreviewColumn.module.css';
 
 const PreviewColumn = () => {
-  const { markdown } = useReadme();
+  const { markdown, darkMode } = useReadme();
   const [previewMode, setPreviewMode] = useState('preview');
 
   const renderedMarkdown = useMemo(() => {
@@ -16,7 +16,7 @@ const PreviewColumn = () => {
   }, [markdown, previewMode]);
 
   return (
-    <div className={styles.column}>
+    <div className={`${styles.column} ${darkMode ? styles.darkMode : ''}`}>
       <div className={styles.header}>
         <h2>Preview</h2>
         <button 

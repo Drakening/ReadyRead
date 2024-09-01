@@ -1,28 +1,75 @@
 .column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    border-right: 1px solid #ccc;
-  }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .resetButton,
-  .toggleButton {
-    padding: 5px 10px;
-    background-color: #f0f0f0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .previewContent {
-    flex: 1;
-    overflow-y: auto;
-  }
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-right: 1px solid #ccc;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.column.darkMode {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border-right-color: #444;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.resetButton,
+.toggleButton {
+  padding: 5px 10px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.darkMode .resetButton,
+.darkMode .toggleButton {
+  background-color: #333;
+  color: #ffffff;
+}
+
+.resetButton:hover,
+.toggleButton:hover {
+  background-color: #e0e0e0;
+}
+
+.darkMode .resetButton:hover,
+.darkMode .toggleButton:hover {
+  background-color: #444;
+}
+
+.previewContent {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.darkMode .previewContent {
+  background-color: #2d2d2d;
+}
+
+/* Styles for markdown elements in dark mode */
+.darkMode h1, .darkMode h2, .darkMode h3, .darkMode h4, .darkMode h5, .darkMode h6 {
+  color: #bb86fc;
+}
+
+.darkMode a {
+  color: #03dac6;
+}
+
+.darkMode code {
+  background-color: #3f3f3f;
+  color: #f8f8f2;
+}
+
+.darkMode pre {
+  background-color: #2b2b2b;
+  border: 1px solid #444;
+}
