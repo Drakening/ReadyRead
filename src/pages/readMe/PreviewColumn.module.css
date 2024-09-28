@@ -49,15 +49,29 @@
 .previewContent {
   flex: 1;
   overflow-y: auto;
+  padding: 8px 0px
+}
+
+.previewContent h1,
+.previewContent h2,
+.previewContent h3,
+.previewContent h4,
+.previewContent h5,
+.previewContent h6,
+.previewContent p,
+.previewContent ul,
+.previewContent ol,
+.previewContent blockquote,
+.previewContent pre {
+  margin-bottom: 20px;
 }
 
 .darkMode .previewContent {
-  background-color: #2d2d2d;
+  background-color: #2a2f37;
 }
 
-/* Styles for markdown elements in dark mode */
 .darkMode h1, .darkMode h2, .darkMode h3, .darkMode h4, .darkMode h5, .darkMode h6 {
-  color: #bb86fc;
+  color: #fff;
 }
 
 .darkMode a {

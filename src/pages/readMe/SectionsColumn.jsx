@@ -1,9 +1,9 @@
-import React from 'react';
-import { useReadme } from '../../context/ReadmeContext';
-import styles from './SectionsColumn.module.css';
+import React from 'react'
+import { useReadme } from '../../context/ReadmeContext'
+import styles from './SectionsColumn.module.css'
 
-const SectionsColumn = () => {
-  const { sections, addSection, removeSection, darkMode } = useReadme();
+export default function SectionsColumn() {
+  const { sections, addSection, removeSection, darkMode } = useReadme()
 
   const availableSections = [
     { name: 'Project Title', content: '# Project Title\n\nA brief description of what this project does and who it\'s for' },
@@ -17,31 +17,36 @@ const SectionsColumn = () => {
     { name: 'Contributing', content: '## Contributing\n\nContributions are welcome! Please feel free to submit a Pull Request.' },
     { name: 'License', content: '## License\n\nThis project is licensed under the [MIT License](https://opensource.org/licenses/MIT).' },
     { name: 'Acknowledgements', content: '## Acknowledgements\n\n- [Resource 1](https://example.com)\n- [Resource 2](https://example.com)' },
-  ];
+  ]
 
   return (
     <div className={`${styles.column} ${darkMode ? styles.darkMode : ''}`}>
-      <h2>Sections</h2>
-      <p>Click on a section below to edit the contents</p>
+      <h2 className={styles.title}>Sections</h2>
+      <p className={styles.subtitle}>Click on a section to edit its contents</p>
       <ul className={styles.sectionList}>
         {sections.map((section, index) => (
           <li key={index} className={styles.sectionItem}>
-            <span className={styles.dragHandle}>≡</span>
-            <span>{section.name}</span>
-            <button onClick={() => removeSection(index)} className={styles.deleteButton}>✕</button>
+            <span className={styles.sectionName}>{section.name}</span>
+            <button onClick={() => removeSection(index)} className={styles.deleteButton} aria-label="Remove section">
+              ×
+            </button>
           </li>
         ))}
       </ul>
-      <button onClick={() => addSection({ name: 'Custom Section', content: '## Custom Section\n\nAdd your content here.' })} className={styles.addButton}>
-        + Custom Section
+      <button
+        onClick={() => addSection({ name: 'Custom Section', content: '## Custom Section\n\nAdd your content here.' })}
+        className={styles.addButton}
+      >
+        Add Custom Section
       </button>
+      <h3 className={styles.availableSectionsTitle}>Available Sections</h3>
       <ul className={styles.availableSections}>
         {availableSections.map((section, index) => (
-          <li key={index} onClick={() => addSection(section)}>{section.name}</li>
+          <li key={index} onClick={() => addSection(section)} className={styles.availableSection}>
+            {section.name}
+          </li>
         ))}
       </ul>
     </div>
-  );
-};
-
-export default SectionsColumn;
+  )
+}

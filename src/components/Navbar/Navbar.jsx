@@ -1,5 +1,7 @@
 import React from 'react';
 import { useReadme } from '../../context/ReadmeContext';
+import { Link } from 'react-router-dom';
+import Icon from '../../assets/icon.svg';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
@@ -16,8 +18,12 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={styles.navbar}>
-      <div className={styles.logo}>README Generator</div>
+    <nav className={`${styles.navbar} ${darkMode ? styles.darkMode : ''}`}>
+      <Link to="/">
+        <div className={styles.logo}>
+        <img src={Icon} alt="Logo" />
+        </div>
+      </Link>
       <div>
         <button onClick={toggleDarkMode} className={styles.iconButton}>
           {darkMode ? '🌙' : '☀️'}

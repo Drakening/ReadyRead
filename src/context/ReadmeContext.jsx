@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 
 const ReadmeContext = createContext();
 
@@ -7,11 +7,26 @@ export const useReadme = () => useContext(ReadmeContext);
 export const ReadmeProvider = ({ children }) => {
   const [sections, setSections] = useState([]);
   const [markdown, setMarkdown] = useState('');
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedMode = localStorage.getItem('darkMode');
+    return savedMode ? JSON.parse(savedMode) : false;
+  });
+
+  useEffect(() => {
+    localStorage.setItem('darkMode', JSON.stringify(darkMode));
+    if (darkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }, [darkMode]);
 
   const addSection = (section) => {
     setSections([...sections, section]);
-    setMarkdown(prevMarkdown => prevMarkdown + '\n\n' + section.content);
+    setMarkdown(prevMarkdown => {
+      const separator = prevMarkdown ? '\n\n' : '';
+      return prevMarkdown + separator + section.content;
+    });
   };
 
   const removeSection = (index) => {

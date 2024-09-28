@@ -1,0 +1,79 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { useReadme } from '../../context/ReadmeContext';
+import Icon from '../../assets/icon.svg';
+import Editor from '../../assets/editor.png';
+import './LandingPage.css';
+
+const Dashboard3DHover = () => {
+  return (
+    <motion.div
+      className="dashboard-container"
+      whileHover={{ rotateX: 5, rotateY: 5 }}
+      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+    >
+      <div className="dashboard">
+        <img src={Editor} alt="Dashboard" className="dashboard-image" />
+      </div>
+    </motion.div>
+  );
+};
+
+const LandingPage = () => {
+  const { darkMode, toggleDarkMode } = useReadme();
+
+  return (
+    <div className={`landing-page ${darkMode ? 'dark-mode' : ''}`}>
+      <header className="header">
+        <nav className="navbar">
+          <div className="logo-container">
+            <img src={Icon} alt="Logo" className="logo" />
+          </div>
+          <button onClick={toggleDarkMode} className="iconButton">
+            {darkMode ? '🌙' : '☀️'}
+          </button>
+        </nav>
+        <div className="header-content">
+          <h1 className="text-centered">
+            Create Professional <span className="block">README Files with Ease</span>
+          </h1>
+          <p>
+            Our intuitive README generator helps you craft polished documentation for your projects. 
+            Save time and ensure consistency across your repositories.
+          </p>
+          <div className="btn-links">
+            <Link to="/readme" className="cta-button">Get Started</Link>
+            <a href="https://github.com/yourusername/your-repo" target="_blank" rel="noopener noreferrer" className="github-button">
+              View on GitHub
+            </a>
+          </div>
+        </div>
+      </header>
+      <section className="dashboard-preview">
+        <div className="background">
+          <div className="bg-white"></div>
+          <div className="bg-black"></div>
+        </div>
+        <div className="dashboard-wrapper">
+          <Dashboard3DHover />
+        </div>
+        <p className="dashboard-instruction">Hover over the image to see the 3D effect</p>
+      </section>
+      <footer className="footer">
+        <div className="footer-links">
+          <span className="footer-link">Privacy Policy</span>
+          <span className="footer-link">Terms of Service</span>
+          <span className="footer-link">Contact Us</span>
+        </div>
+        <div className="footer-social">
+          <a href="#" className="footer-social-link">Twitter</a>
+          <a href="#" className="footer-social-link">GitHub</a>
+          <a href="#" className="footer-social-link">LinkedIn</a>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default LandingPage;
