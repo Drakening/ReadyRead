@@ -1,6 +1,7 @@
 import React from 'react';
 import { useReadme } from '../../context/ReadmeContext';
 import { Link } from 'react-router-dom';
+import { FiSun, FiMoon } from 'react-icons/fi';
 import Icon from '../../assets/icon.svg';
 import styles from './Navbar.module.css';
 
@@ -21,13 +22,21 @@ const Navbar = () => {
     <nav className={`${styles.navbar} ${darkMode ? styles.darkMode : ''}`}>
       <Link to="/">
         <div className={styles.logo}>
-        <img src={Icon} alt="Logo" />
+          <img src={Icon} alt="Logo" />
         </div>
       </Link>
       <div>
-        <button onClick={toggleDarkMode} className={styles.iconButton}>
-          {darkMode ? '🌙' : '☀️'}
-        </button>
+        <label className={styles.switch}>
+          <input
+            type="checkbox"
+            checked={darkMode}
+            onChange={toggleDarkMode}
+          />
+          <span className={styles.slider}>
+            <FiSun className={styles.sunIcon} />
+            <FiMoon className={styles.moonIcon} />
+          </span>
+        </label>
         <button onClick={downloadReadme} className={styles.downloadButton}>Download</button>
       </div>
     </nav>

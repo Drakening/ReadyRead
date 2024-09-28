@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useReadme } from '../../context/ReadmeContext';
+import { FiSun, FiMoon } from 'react-icons/fi';
 import Icon from '../../assets/icon.svg';
 import Editor from '../../assets/editor.png';
 import './LandingPage.css';
@@ -30,9 +31,17 @@ const LandingPage = () => {
           <div className="logo-container">
             <img src={Icon} alt="Logo" className="logo" />
           </div>
-          <button onClick={toggleDarkMode} className="iconButton">
-            {darkMode ? '🌙' : '☀️'}
-          </button>
+          <label className="switch">
+            <input
+              type="checkbox"
+              checked={darkMode}
+              onChange={toggleDarkMode}
+            />
+            <span className="slider">
+              <FiSun className="sunIcon" />
+              <FiMoon className="moonIcon" />
+            </span>
+          </label>
         </nav>
         <div className="header-content">
           <h1 className="text-centered">
@@ -67,9 +76,8 @@ const LandingPage = () => {
           <span className="footer-link">Contact Us</span>
         </div>
         <div className="footer-social">
-          <a href="#" className="footer-social-link">Twitter</a>
-          <a href="#" className="footer-social-link">GitHub</a>
-          <a href="#" className="footer-social-link">LinkedIn</a>
+          <a href="https://github.com/Drakening" className="footer-social-link">GitHub</a>
+          <a href="https://www.linkedin.com/in/thando-mkhonza-644453263/" className="footer-social-link">LinkedIn</a>
         </div>
       </footer>
     </div>

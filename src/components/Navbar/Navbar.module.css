@@ -25,21 +25,88 @@
     width: auto;
 }
 
-.iconButton,
-.downloadButton {
-    margin-left: 10px;
-    padding: 10px;
-    background-color: transparent;
-    color: inherit;
-    border: none;
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-right: 10px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
     cursor: pointer;
-    border-radius: 8px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #00bfa6;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.sunIcon,
+.moonIcon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    transition: opacity 0.3s ease;
+}
+
+.sunIcon {
+    left: 8px;
+    opacity: 1;
+}
+
+.moonIcon {
+    right: 8px;
+    opacity: 0;
+}
+
+input:checked + .slider .sunIcon {
+    opacity: 0;
+}
+
+input:checked + .slider .moonIcon {
+    opacity: 1;
 }
 
 .downloadButton {
+    margin-left: 10px;
     padding: 16px 32px;
     background-color: #00bfa6;
     color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
     transition: background-color 0.3s;
     font-size: 1rem;
     font-weight: 700;
