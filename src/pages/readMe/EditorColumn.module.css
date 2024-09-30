@@ -26,28 +26,42 @@
 }
 
 .copyButton {
-  padding: 0.5rem 1rem;
-  background-color: #f3f4f6;
-  border: none;
-  border-radius: 0.375rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #1f2937;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: transparent;
+  border: 1px solid #e5e7eb;
+  border-radius: 50%;
+  font-size: 1rem;
+  color: #6b7280;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  transition: all 0.3s ease;
 }
 
 .darkMode .copyButton {
-  background-color: #374151;
-  color: #f3f4f6;
+  border-color: #4b5563;
+  color: #9ca3af;
 }
 
 .copyButton:hover {
-  background-color: #e5e7eb;
+  background-color: #f3f4f6;
 }
 
 .darkMode .copyButton:hover {
-  background-color: #4b5563;
+  background-color: #374151;
+}
+
+.copyButton.copied {
+  background-color: #10b981;
+  border-color: #10b981;
+  color: white;
+}
+
+.darkMode .copyButton.copied {
+  background-color: #059669;
+  border-color: #059669;
 }
 
 .editorWrapper {

@@ -5,10 +5,11 @@ import { markdown } from '@codemirror/lang-markdown';
 import { oneDark } from '@codemirror/theme-one-dark';
 import { EditorView } from '@codemirror/view';
 import styles from './EditorColumn.module.css';
+import { FaRegCopy, FaCheck } from 'react-icons/fa'; // Import icons
 
 const EditorColumn = () => {
   const { markdown: markdownContent, updateMarkdown, darkMode } = useReadme();
-  const [buttonText, setButtonText] = useState('Copy');
+  const [copied, setCopied] = useState(false);
 
   const handleEditorChange = (value) => {
     updateMarkdown(value);
@@ -17,9 +18,9 @@ const EditorColumn = () => {
   const handleCopy = () => {
     navigator.clipboard.writeText(markdownContent)
       .then(() => {
-        setButtonText('Copied!');
+        setCopied(true);
         setTimeout(() => {
-          setButtonText('Copy');
+          setCopied(false);
         }, 2000);
       });
   };
@@ -28,8 +29,12 @@ const EditorColumn = () => {
     <div className={`${styles.column} ${darkMode ? styles.darkMode : ''}`}>
       <div className={styles.header}>
         <h2>Editor</h2>
-        <button className={styles.copyButton} onClick={handleCopy}>
-          {buttonText}
+        <button 
+          className={`${styles.copyButton} ${copied ? styles.copied : ''}`} 
+          onClick={handleCopy}
+          aria-label="Copy to clipboard"
+        >
+          {copied ? <FaCheck /> : <FaRegCopy />}
         </button>
       </div>
       <div className={styles.editorWrapper}>

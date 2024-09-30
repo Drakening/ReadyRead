@@ -7,12 +7,13 @@ import Icon from '../../assets/icon.svg';
 import Editor from '../../assets/editor.png';
 import './LandingPage.css';
 
-const Dashboard3DHover = () => {
+const DashboardPreview = () => {
   return (
     <motion.div
       className="dashboard-container"
-      whileHover={{ rotateX: 5, rotateY: 5 }}
-      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
     >
       <div className="dashboard">
         <img src={Editor} alt="Dashboard" className="dashboard-image" />
@@ -65,16 +66,10 @@ const LandingPage = () => {
           <div className="bg-black"></div>
         </div>
         <div className="dashboard-wrapper">
-          <Dashboard3DHover />
+          <DashboardPreview />
         </div>
-        <p className="dashboard-instruction">Hover over the image to see the 3D effect</p>
       </section>
       <footer className="footer">
-        <div className="footer-links">
-          <span className="footer-link">Privacy Policy</span>
-          <span className="footer-link">Terms of Service</span>
-          <span className="footer-link">Contact Us</span>
-        </div>
         <div className="footer-social">
           <a href="https://github.com/Drakening" className="footer-social-link">GitHub</a>
           <a href="https://www.linkedin.com/in/thando-mkhonza-644453263/" className="footer-social-link">LinkedIn</a>

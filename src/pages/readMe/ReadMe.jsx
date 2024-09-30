@@ -12,9 +12,15 @@ const ReadMe = () => {
       <div className={styles.container}>
         <Navbar />
         <div className={styles.content}>
-          <SectionsColumn />
-          <EditorColumn />
-          <PreviewColumn />
+          <div className={styles.column}>
+            <SectionsColumn />
+          </div>
+          <div className={styles.column}>
+            <EditorColumn />
+          </div>
+          <div className={styles.column}>
+            <PreviewColumn />
+          </div>
         </div>
       </div>
     </ReadmeProvider>

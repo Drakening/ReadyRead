@@ -41,24 +41,25 @@
     overflow: hidden;
   }
   
+  .column {
+    flex: 1;
+    overflow-y: auto;
+  }
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1024px) {
     .content {
-      flex-wrap: wrap;
+      flex-direction: column;
     }
-  
-    .content > * {
-      flex-basis: 50%;
+
+    .column {
+      flex: none;
+      height: 33.33vh;
     }
   }
   
   @media (max-width: 768px) {
-    .content {
-      flex-direction: column;
-    }
-  
-    .content > * {
-      flex-basis: 100%;
+    .column {
+      height: auto;
+      min-height: 33.33vh;
     }
   }
-  
