@@ -1,12 +1,7 @@
 
-# Project Title
+# Readify
 
-A brief description of what this project does and who it's for
-
-
-## Demo
-
-Insert gif or link to demo
+An online editor that makes it easy to build and customize professional READMEs to help developers.
 
 
 ## Screenshots
@@ -16,20 +11,8 @@ Insert gif or link to demo
 
 ## Features
 
-- Light/dark mode toggle
-- Live previews
-- Fullscreen mode
-- Cross platform
-
-
-## FAQ
-
-#### Question 1
-
-Answer 1
-
-#### Question 2
-
-Answer 2
+- Choose from a variety of sections to add to your README
+- Edit the content of each section
+- Download your complete README file
 
 
