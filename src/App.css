@@ -1,0 +1,23 @@
+
+  @import url('./fonts.css');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+  body {
+    color: #1d1d1d;
+    font-family: sans-serif;
+    margin: 0 auto;
+    max-width: 1440px;
+    background-color: #f7f7f7;
+  }
+  
+  li {
+    list-style-type: none;
+  }
+
+  a {
+    text-decoration: none;
+  }

@@ -9,16 +9,16 @@ const PreviewColumn = () => {
 
   const renderedMarkdown = useMemo(() => {
     return previewMode === 'preview' ? (
-      <ReactMarkdown>{markdown}</ReactMarkdown>
+      <ReactMarkdown className={styles.previewContent}>{markdown}</ReactMarkdown>
     ) : (
-      <pre>{markdown}</pre>
+      <pre className={styles.previewContent}>{markdown}</pre>
     );
   }, [markdown, previewMode]);
 
   return (
     <div className={`${styles.column} ${darkMode ? styles.darkMode : ''}`}>
       <div className={styles.header}>
-        <h2>Preview</h2>
+        <h2 className={styles.heading}>Preview</h2>
         <button 
           onClick={() => setPreviewMode(prevMode => prevMode === 'preview' ? 'raw' : 'preview')} 
           className={styles.toggleButton}

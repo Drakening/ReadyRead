@@ -1,11 +1,19 @@
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { ReadmeProvider } from './context/ReadmeContext';
+import LandingPage from './pages/home/LandingPage';
 import ReadMe from './pages/readMe/ReadMe';
 
 function App() {
   return (
-    <div className="App">
-      <ReadMe />
-    </div>
+    <ReadmeProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/readme" element={<ReadMe />} />
+        </Routes>
+      </Router>
+    </ReadmeProvider>
   );
 }
 
