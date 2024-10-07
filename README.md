@@ -1,5 +1,5 @@
 
-# Readify
+# ReadyRead
 
 An online editor that makes it easy to build and customize professional READMEs to help developers.
 
