@@ -6,8 +6,7 @@ An online editor that makes it easy to build and customize professional READMEs 
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-
+![landing](https://github.com/user-attachments/assets/d7055e4c-ebc5-48c0-b811-7595efd1119a)
 
 ## Features
 
