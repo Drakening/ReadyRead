@@ -18,12 +18,10 @@
 
 ::-webkit-scrollbar-track {
   background: var(--scrollbar-track);
-  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--scrollbar-thumb);
-  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -49,17 +47,19 @@
   @media (max-width: 1024px) {
     .content {
       flex-direction: column;
+      overflow-y: auto; /* Add this line */
     }
 
     .column {
       flex: none;
-      height: 33.33vh;
+      height: auto; /* Change this from 33.33vh to auto */
+      min-height: 33.33vh; /* Add this line */
     }
   }
   
   @media (max-width: 768px) {
     .column {
       height: auto;
-      min-height: 33.33vh;
+      min-height: auto; /* Change this from 33.33vh to auto */
     }
   }
