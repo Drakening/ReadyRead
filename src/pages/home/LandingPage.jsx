@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useReadme } from '../../context/ReadmeContext';
-import { FiSun, FiMoon } from 'react-icons/fi';
+import { FiSun, FiMoon, FiZap } from 'react-icons/fi';
 import Icon from '../../assets/icon.svg';
 import Editor from '../../assets/editor.png';
 import './LandingPage.css';
@@ -55,25 +55,20 @@ const LandingPage = () => {
           <div className="btn-links">
             <Link to="/readme" className="cta-button">Get Started</Link>
             <a href="https://github.com/yourusername/your-repo" target="_blank" rel="noopener noreferrer" className="github-button">
-              View on GitHub
+              GitHub
             </a>
           </div>
         </div>
       </header>
       <section className="dashboard-preview">
-        <div className="background">
-          <div className="bg-white"></div>
-          <div className="bg-black"></div>
-        </div>
         <div className="dashboard-wrapper">
           <DashboardPreview />
         </div>
       </section>
       <footer className="footer">
-        <div className="footer-social">
-          <a href="https://github.com/Drakening" className="footer-social-link">GitHub</a>
-          <a href="https://www.linkedin.com/in/thando-mkhonza-644453263/" className="footer-social-link">LinkedIn</a>
-        </div>
+        <p className="footer-text">
+          Made by a developer for developers <FiZap className="thunder-icon" />
+        </p>
       </footer>
     </div>
   );

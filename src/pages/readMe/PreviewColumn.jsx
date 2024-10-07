@@ -9,9 +9,9 @@ const PreviewColumn = () => {
 
   const renderedMarkdown = useMemo(() => {
     return previewMode === 'preview' ? (
-      <ReactMarkdown className={styles.previewContent}>{markdown}</ReactMarkdown>
+      <ReactMarkdown className={styles.markdownContent}>{markdown}</ReactMarkdown>
     ) : (
-      <pre className={styles.previewContent}>{markdown}</pre>
+      <pre className={styles.rawContent}>{markdown}</pre>
     );
   }, [markdown, previewMode]);
 
