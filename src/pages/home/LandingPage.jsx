@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useReadme } from '../../context/ReadmeContext';
 import { FiSun, FiMoon, FiZap } from 'react-icons/fi';
 import Icon from '../../assets/icon.svg';
-import Editor from '../../assets/editor.png';
+import Editor from '../../assets/dashboard-front.png';
 import './LandingPage.css';
 
 const DashboardPreview = () => {
@@ -26,8 +26,8 @@ const LandingPage = () => {
   const { darkMode, toggleDarkMode } = useReadme();
 
   return (
-    <div className={`landing-page ${darkMode ? 'dark-mode' : ''}`}>
-      <header className="header">
+    <div className={`landing-page  ${darkMode ? 'dark-mode' : ''}`}>
+      <header className="header grid">
         <nav className="navbar">
           <div className="logo-container">
             <img src={Icon} alt="Logo" className="logo" />
@@ -54,13 +54,13 @@ const LandingPage = () => {
           </p>
           <div className="btn-links">
             <Link to="/readme" className="cta-button">Get Started</Link>
-            <a href="https://github.com/yourusername/your-repo" target="_blank" rel="noopener noreferrer" className="github-button">
+            <a href="https://github.com/Drakening" target="_blank" rel="noopener noreferrer" className="github-button">
               GitHub
             </a>
           </div>
         </div>
       </header>
-      <section className="dashboard-preview">
+      <section className="dashboard-preview grid">
         <div className="dashboard-wrapper">
           <DashboardPreview />
         </div>

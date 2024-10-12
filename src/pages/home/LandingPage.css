@@ -12,6 +12,18 @@
   padding: 1.5rem 0 6rem;
 }
 
+.grid {
+  background-image: linear-gradient(to right, #e0e0e0 1px, transparent 1px),
+                    linear-gradient(to bottom, #e0e0e0 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.dark-mode .grid {
+  background-image: linear-gradient(to right, #212121 1px, transparent 1px),
+                    linear-gradient(to bottom, #212121 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
 .navbar {
   padding: 1rem 1.5rem;
   display: flex;
