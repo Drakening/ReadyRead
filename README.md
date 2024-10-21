@@ -7,6 +7,17 @@ An online editor that makes it easy to build and customize professional READMEs 
 
 [Go to website](https://readyread.netlify.app/)
 
+## Build With
+
+### Frontend
+
+- React
+- codemirror/lang-markdown
+- framer-motion
+- react-icons
+- react-markdown
+- react-router-dom
+
 ## Features
 
 - Choose from a variety of sections to add to your README
