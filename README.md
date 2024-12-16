@@ -3,7 +3,7 @@
 
 An online editor that makes it easy to build and customize professional READMEs to help developers.
 
-## Live demo
+## Live site
 
 [Visit Live Website](https://readyread.netlify.app/)
 
