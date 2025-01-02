@@ -1,14 +1,33 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 const TextScramble = ({ children, scrambleSpeed = 50 }) => {
-  const [isHovering, setIsHovering] = useState(false)
   const [text, setText] = useState('')
+  const [isVisible, setIsVisible] = useState(false)
+  const elementRef = useRef(null)
   const originalText = React.Children.toArray(children).join('')
 
   useEffect(() => {
-    if (!isHovering) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.1 } // Trigger when 10% of the element is visible
+    )
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (!isVisible) {
       setText(originalText)
       return
     }
@@ -34,14 +53,10 @@ const TextScramble = ({ children, scrambleSpeed = 50 }) => {
     }, scrambleSpeed)
 
     return () => clearInterval(interval)
-  }, [isHovering, originalText, scrambleSpeed])
+  }, [isVisible, originalText, scrambleSpeed])
 
   return (
-    <span
-      className="text-scramble"
-      onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={() => setIsHovering(false)}
-    >
+    <span ref={elementRef} className="text-scramble">
       {text || children}
     </span>
   )
