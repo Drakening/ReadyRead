@@ -5,7 +5,6 @@ import styles from './SectionsColumn.module.css';
 export default function SectionsColumn() {
   const { sections, addSection, removeSection, darkMode } = useReadme();
   
-
   const originalSections = [
     { name: 'Project Title', content: '# Project Title\n\nA brief description of what this project does and who it\'s for' },
     { name: 'Introduction', content: '## Introduction\n\nProvide a brief overview of the project and explain its purpose and motivation.' },
@@ -30,14 +29,14 @@ export default function SectionsColumn() {
     const sectionToRemove = sections[index];
     removeSection(index);
     
-   
+    
     const originalIndex = originalSections.findIndex(s => s.name === sectionToRemove.name);
     
-   
+    
     const newAvailableSections = [...availableSections];
     let insertIndex = 0;
     
-  
+   
     while (insertIndex < newAvailableSections.length) {
       const currentOriginalIndex = originalSections.findIndex(
         s => s.name === newAvailableSections[insertIndex].name
