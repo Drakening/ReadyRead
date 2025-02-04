@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react"
-import './textscramble'
+import './textscramble.css'
 
 const TextScramble = ({ children, scrambleSpeed = 50 }) => {
   const [text, setText] = useState("")
