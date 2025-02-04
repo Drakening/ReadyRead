@@ -1,12 +1,11 @@
-'use client'
-
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from "react"
+import './textscramble'
 
 const TextScramble = ({ children, scrambleSpeed = 50 }) => {
-  const [text, setText] = useState('')
+  const [text, setText] = useState("")
   const [isVisible, setIsVisible] = useState(false)
   const elementRef = useRef(null)
-  const originalText = React.Children.toArray(children).join('')
+  const originalText = React.Children.toArray(children).join("").toLowerCase()
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -16,7 +15,7 @@ const TextScramble = ({ children, scrambleSpeed = 50 }) => {
           observer.disconnect()
         }
       },
-      { threshold: 0.1 } // Trigger when 10% of the element is visible
+      { threshold: 0.1 },
     )
 
     if (elementRef.current) {
@@ -34,16 +33,16 @@ const TextScramble = ({ children, scrambleSpeed = 50 }) => {
 
     let iteration = 0
     const interval = setInterval(() => {
-      setText(prevText =>
-        prevText
-          .split('')
+      setText((prevText) =>
+        originalText
+          .split("")
           .map((char, index) => {
             if (index < iteration) {
-              return originalText[index]
+              return char
             }
-            return String.fromCharCode(65 + Math.floor(Math.random() * 26))
+            return char === " " ? " " : String.fromCharCode(97 + Math.floor(Math.random() * 26))
           })
-          .join('')
+          .join(""),
       )
 
       iteration += 1 / 3
@@ -56,8 +55,9 @@ const TextScramble = ({ children, scrambleSpeed = 50 }) => {
   }, [isVisible, originalText, scrambleSpeed])
 
   return (
-    <span ref={elementRef} className="text-scramble">
-      {text || children}
+    <span ref={elementRef} className="text-scramble" aria-label={originalText}>
+      <span className="invisible">{originalText}</span>
+      <span className="visible">{text || originalText}</span>
     </span>
   )
 }

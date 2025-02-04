@@ -6,6 +6,7 @@ import { FiSun, FiMoon, FiZap } from 'react-icons/fi';
 import Icon from '../../assets/icon.svg';
 import Editor from '../../assets/dashboard-front.png';
 import './LandingPage.css';
+import TextScramble from '../../components/ui/TextScramble';
 
 const DashboardPreview = () => {
   return (
@@ -46,8 +47,12 @@ const LandingPage = () => {
         </nav>
         <div className="header-content">
           <h1 className="text-centered">
-            Create Professional <span className="block">README Files with Ease</span>
+              <TextScramble>Create Professional </TextScramble>
+            <span className="block">
+              <TextScramble>README Files with Ease</TextScramble>
+            </span>
           </h1>
+          
           <p>
             Our intuitive README generator helps you craft polished documentation for your projects. 
             Save time and ensure consistency across your repositories.
