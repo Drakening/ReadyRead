@@ -22,7 +22,11 @@ const TextScramble = ({ children, scrambleSpeed = 50 }) => {
       observer.observe(elementRef.current)
     }
 
-    return () => observer.disconnect()
+    return () => {
+      if (elementRef.current) {
+        observer.unobserve(elementRef.current)
+      }
+    }
   }, [])
 
   useEffect(() => {
@@ -56,11 +60,10 @@ const TextScramble = ({ children, scrambleSpeed = 50 }) => {
 
   return (
     <span ref={elementRef} className="text-scramble" aria-label={originalText}>
-      <span className="invisible">{originalText}</span>
-      <span className="visible">{text || originalText}</span>
+      <span key="invisible" className="invisible">{originalText}</span>
+      <span key="visible" className="visible" aria-hidden="true">{text || originalText}</span>
     </span>
   )
 }
 
 export default TextScramble
-
