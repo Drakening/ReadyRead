@@ -12,7 +12,7 @@ An online editor that makes it easy to build and customize professional READMEs 
 ### Frontend
 
 - React
-- codemirror/lang-markdown
+- codemirror
 - framer-motion
 - react-icons
 - react-markdown
