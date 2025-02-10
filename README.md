@@ -15,7 +15,6 @@ An online editor that makes it easy to build and customize professional READMEs 
 - codemirror
 - framer-motion
 - react-icons
-- react-markdown
 - react-router-dom
 
 ## Features
