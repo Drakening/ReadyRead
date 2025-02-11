@@ -49,7 +49,7 @@ const LandingPage = () => {
             Create Professional <span className="block">README Files with Ease</span>
           </h1>
           <p>
-            Our intuitive README generator helps you craft polished documentation for your projects. 
+            Our easy to use README generator helps you create professional documentation for your projects. 
             Save time and ensure consistency across your repositories.
           </p>
           <div className="btn-links">
@@ -67,7 +67,7 @@ const LandingPage = () => {
       </section>
       <footer className="footer">
         <p className="footer-text">
-          Made by a developer for developers <FiZap className="thunder-icon" />
+          Made by developers for developers <FiZap className="thunder-icon" />
         </p>
       </footer>
     </div>
