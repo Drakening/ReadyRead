@@ -49,7 +49,7 @@ const LandingPage = () => {
             Create Professional <span className="block">README Files with Ease</span>
           </h1>
           <p>
-            Our easy to use README generator helps you create professional documentation for your projects. 
+            Our easy to use README generator helps you create systematic documentation for your projects. 
             Save time and ensure consistency across your repositories.
           </p>
           <div className="btn-links">
